@@ -10,7 +10,7 @@ public class Persona {
     @Column(name="id_persona")
     @Basic(optional = false)
     @GeneratedValue(generator = "personaSeq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "persona_seq",sequenceName = "personaSeq", allocationSize = 0)
+    @SequenceGenerator(name = "personaSeq",sequenceName = "persona_seq", allocationSize = 0)
     private Integer id;
 
     @Column(name="nombre", length = 50)
@@ -21,10 +21,7 @@ public class Persona {
     @Basic(optional = false)
     private String apellido;
 
-    public Persona(Integer id, String nombre, String apellido) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public Persona() {
     }
 
     public Integer getId() {
