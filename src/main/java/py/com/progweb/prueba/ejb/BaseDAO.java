@@ -42,6 +42,7 @@ public class BaseDAO<T> {
         }
     }
 
+    //metodo para crear nuevo objeto
     public void persist(T entity) throws Exception {
         try {
             getEm().persist(entity);
@@ -51,6 +52,7 @@ public class BaseDAO<T> {
         }
     }
 
+    //metodo para editar objeto
     public T merge(T entity) throws Exception {
         try {
             return getEm().merge(entity);
@@ -60,6 +62,7 @@ public class BaseDAO<T> {
         }
     }
 
+    //metodo para eliminar objeto
     public void delete(Object id) throws Exception {
         try {
             T entity = this.get(id);
@@ -70,6 +73,8 @@ public class BaseDAO<T> {
         }
     }
 
+
+    //metodo para obtener listado de todos los objetos de cierto tipo
     public List<T> getAll() throws Exception {
 
         try{
@@ -81,18 +86,6 @@ public class BaseDAO<T> {
         }
 
     }
-
-    /*public List<T> getAll(Class<T> entityClass) throws Exception {
-
-        try{
-            Query query = getEm().createQuery("from " + entityClass.getName());
-            return (List<T>) query.getResultList();
-        }catch (Exception e){
-            e.printStackTrace();
-            throw new Exception("Hubo un error al obtener la lista");
-        }
-
-    }*/
 
 
 }
