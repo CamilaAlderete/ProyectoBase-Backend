@@ -22,12 +22,10 @@ public class Concepto_puntos {
     private Integer id;
 
     @Column(name = "descripcion")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     private String descripcion;
 
     @Column(name = "puntos_requeridos")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     private Integer puntos_requeridos;
 

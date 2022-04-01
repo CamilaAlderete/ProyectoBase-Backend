@@ -1,25 +1,25 @@
 package py.com.progweb.prueba.rest;
 
-import py.com.progweb.prueba.ejb.Uso_puntos_detalleDAO;
-import py.com.progweb.prueba.model.Uso_puntos_detalle;
+import py.com.progweb.prueba.ejb.BolsaDAO;
+import py.com.progweb.prueba.model.Bolsa;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("uso_puntos_detalle")
+@Path("bolsa")
 @Consumes("application/json")
 @Produces("application/json")
 //@RequestScoped
-public class Uso_puntos_detalleRest {
+public class BolsaRest {
     @Inject
-    private Uso_puntos_detalleDAO detalleDAO;
+    private BolsaDAO bolsaDAO;
 
     @GET
     @Path("/")
     public Response listar(){
         try {
-            return Response.ok( detalleDAO.getAll() ).build();
+            return Response.ok( bolsaDAO.getAll() ).build();
 
         }catch(Exception e){
             return Response.serverError().build();
@@ -28,10 +28,10 @@ public class Uso_puntos_detalleRest {
 
     @POST
     @Path("/")
-    public Response crear(Uso_puntos_detalle detalle){
+    public Response crear(Bolsa bolsa){
 
         try {
-            this.detalleDAO.persist(detalle);
+            this.bolsaDAO.persist(bolsa);
             return Response.ok().build();
 
         }catch(Exception e){
@@ -41,10 +41,10 @@ public class Uso_puntos_detalleRest {
 
     @PUT
     @Path("/")
-    public Response editar(Uso_puntos_detalle detalle){
+    public Response editar(Bolsa bolsa){
 
         try {
-            this.detalleDAO.merge(detalle);
+            this.bolsaDAO.merge(bolsa);
             return Response.ok().build();
 
         }catch(Exception e){
@@ -58,7 +58,7 @@ public class Uso_puntos_detalleRest {
 
         try {
 
-            this.detalleDAO.delete(id);
+            this.bolsaDAO.delete(id);
             return Response.ok().build();
 
         }catch(Exception e){

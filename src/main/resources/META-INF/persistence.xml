@@ -9,10 +9,15 @@
 
       <!--aqui se registran los modelos-->
       <class>py.com.progweb.prueba.model.Persona</class>
+
       <class>py.com.progweb.prueba.model.Cliente</class>
       <class>py.com.progweb.prueba.model.Vencimiento_puntos</class>
       <class>py.com.progweb.prueba.model.Uso_puntos_cabecera</class>
       <class>py.com.progweb.prueba.model.Uso_puntos_detalle</class>
+      <class>py.com.progweb.prueba.model.Bolsa</class>
+      <class>py.com.progweb.prueba.model.Asignacion_puntos</class>
+      <class>py.com.progweb.prueba.model.Concepto_puntos</class>
+
 
       <properties>
          <property name="hibernate.id.new_generator_mappings" value="true"/>

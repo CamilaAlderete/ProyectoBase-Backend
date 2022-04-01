@@ -1,25 +1,25 @@
 package py.com.progweb.prueba.rest;
 
-import py.com.progweb.prueba.ejb.Uso_puntos_detalleDAO;
-import py.com.progweb.prueba.model.Uso_puntos_detalle;
+import py.com.progweb.prueba.ejb.Asignacion_puntosDAO;
+import py.com.progweb.prueba.model.Asignacion_puntos;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("uso_puntos_detalle")
+@Path("asignacion_puntos")
 @Consumes("application/json")
 @Produces("application/json")
 //@RequestScoped
-public class Uso_puntos_detalleRest {
+public class Asignacion_puntosRest {
     @Inject
-    private Uso_puntos_detalleDAO detalleDAO;
+    private Asignacion_puntosDAO asignacion_puntosDAO;
 
     @GET
     @Path("/")
     public Response listar(){
         try {
-            return Response.ok( detalleDAO.getAll() ).build();
+            return Response.ok( asignacion_puntosDAO.getAll() ).build();
 
         }catch(Exception e){
             return Response.serverError().build();
@@ -28,10 +28,10 @@ public class Uso_puntos_detalleRest {
 
     @POST
     @Path("/")
-    public Response crear(Uso_puntos_detalle detalle){
+    public Response crear(Asignacion_puntos asignacion_puntos){
 
         try {
-            this.detalleDAO.persist(detalle);
+            this.asignacion_puntosDAO.persist(asignacion_puntos);
             return Response.ok().build();
 
         }catch(Exception e){
@@ -41,10 +41,10 @@ public class Uso_puntos_detalleRest {
 
     @PUT
     @Path("/")
-    public Response editar(Uso_puntos_detalle detalle){
+    public Response editar(Asignacion_puntos asignacion_puntos){
 
         try {
-            this.detalleDAO.merge(detalle);
+            this.asignacion_puntosDAO.merge(asignacion_puntos);
             return Response.ok().build();
 
         }catch(Exception e){
@@ -58,7 +58,7 @@ public class Uso_puntos_detalleRest {
 
         try {
 
-            this.detalleDAO.delete(id);
+            this.asignacion_puntosDAO.delete(id);
             return Response.ok().build();
 
         }catch(Exception e){

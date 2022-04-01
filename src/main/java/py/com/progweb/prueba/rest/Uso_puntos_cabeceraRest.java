@@ -6,9 +6,8 @@ import py.com.progweb.prueba.model.Uso_puntos_cabecera;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
-@Path("cabecera")
+@Path("uso_puntos_cabecera")
 @Consumes("application/json")
 @Produces("application/json")
 //@RequestScoped

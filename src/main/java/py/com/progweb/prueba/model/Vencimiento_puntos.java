@@ -35,44 +35,44 @@ public class Vencimiento_puntos {
 
     }
 
-    public void setIdVencimiento(Integer idVencimiento) {
-        this.idVencimiento = idVencimiento;
-    }
-
-    public void setFecha_inicio(Date fecha_inicio) {
-        this.fechaInicio = fecha_inicio;
-    }
-
-    public void setFecha_fin(Date fecha_fin) {
-        this.fechaFin = fecha_fin;
-    }
-
-    public void setDuracion(Integer duracion) {
-        this.duracion = duracion;
-    }
-
     public Integer getIdVencimiento() {
         return idVencimiento;
     }
 
-    public Date getFecha_inicio() {
+    public void setIdVencimiento(Integer idVencimiento) {
+        this.idVencimiento = idVencimiento;
+    }
+
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public Date getFecha_fin() {
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFin() {
         return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
     public Integer getDuracion() {
         return duracion;
     }
 
+    public void setDuracion(Integer duracion) {
+        this.duracion = duracion;
+    }
+
     @Override
     public String toString() {
         return "Vencimiento_puntos{" +
                 "idVencimiento=" + idVencimiento +
-                ", fecha_inicio=" + fechaInicio +
-                ", fecha_fin=" + fechaFin +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
                 ", duracion=" + duracion +
                 '}';
     }

@@ -4,6 +4,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+ create table uso_puntos_cabecera(
+	id_cabecera Serial Primary Key,
+	id_cliente Integer NOT NULL,
+	id_concepto Integer NOT NULL,
+	puntaje_utilizado Integer NOT NULL,
+	fecha date NOT NULL,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente),
+	FOREIGN KEY(id_concepto) REFERENCES concepto_puntos (id_concepto)
+);
+
+* */
 @Entity
 @Table(name = "uso_puntos_cabecera")
 public class Uso_puntos_cabecera {
@@ -13,15 +25,13 @@ public class Uso_puntos_cabecera {
     @Basic(optional = false)
     private Integer idCabecera;
 
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
+    @JoinColumn(name = "id_cliente")
     @ManyToOne(optional=false)
     private Cliente cliente;
 
-    //SOLE DEBE CREAR EL MODELO Y DEMAS DE CONCEPTO_PUNTOS...
-
-   // @JoinColumn(name = "id_concepto", referencedColumnName = "id_concepto")
-   // @ManyToOne(optional=false)
-   // private Concepto_puntos conceptoPuntos;
+   @ManyToOne(optional = false)
+   @JoinColumn(name = "id_concepto")
+   private Concepto_puntos conceptoPuntos;
 
     @Column(name = "puntaje_utilizado")
     @Basic(optional = false)
@@ -34,45 +44,48 @@ public class Uso_puntos_cabecera {
     private Date fecha;
 
 
-
     public Uso_puntos_cabecera(){
 
-    }
-
-    public void setIdCabecera(Integer idCabecera) {
-        this.idCabecera = idCabecera;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
- //   public void setConceptoPuntos(Concepto_puntos concepto) { this.conceptoPuntos = concepto; }
-
-    public void setPuntajeUtilizado(Integer puntajeUtilizado) {
-        this.puntajeUtilizado = puntajeUtilizado;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public Integer getIdCabecera() {
         return idCabecera;
     }
 
+    public void setIdCabecera(Integer idCabecera) {
+        this.idCabecera = idCabecera;
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
 
-//   public void getConceptoPuntos() { return conceptoPuntos; }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Concepto_puntos getConceptoPuntos() {
+        return conceptoPuntos;
+    }
+
+    public void setConceptoPuntos(Concepto_puntos conceptoPuntos) {
+        this.conceptoPuntos = conceptoPuntos;
+    }
 
     public Integer getPuntajeUtilizado() {
         return puntajeUtilizado;
     }
 
+    public void setPuntajeUtilizado(Integer puntajeUtilizado) {
+        this.puntajeUtilizado = puntajeUtilizado;
+    }
+
     public Date getFecha() {
         return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     @Override
@@ -80,6 +93,7 @@ public class Uso_puntos_cabecera {
         return "Uso_puntos_cabecera{" +
                 "idCabecera=" + idCabecera +
                 ", cliente=" + cliente +
+                ", conceptoPuntos=" + conceptoPuntos +
                 ", puntajeUtilizado=" + puntajeUtilizado +
                 ", fecha=" + fecha +
                 '}';
