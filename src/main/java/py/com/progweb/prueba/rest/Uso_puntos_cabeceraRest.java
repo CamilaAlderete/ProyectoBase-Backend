@@ -6,6 +6,7 @@ import py.com.progweb.prueba.model.Uso_puntos_cabecera;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("uso_puntos_cabecera")
 @Consumes("application/json")
@@ -14,41 +15,6 @@ import javax.ws.rs.core.Response;
 public class Uso_puntos_cabeceraRest {
     @Inject
     private Uso_puntos_cabeceraDAO cabeceraDAO;
-
-
-
-    @GET
-    @Path("/concepto/{idConcepto}")
-    public Response getByConcepto(@PathParam("idConcepto") Integer idConcepto) {
-        try {
-            return Response.ok(cabeceraDAO.get(idConcepto)).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.status(404).entity("No se encontro Uso de Puntos en este Concepto").build();
-        }
-    }
-
- /*   @GET
-    @Path("/fecha/{fecha}")
-    public Response getByFecha(@PathParam("fecha") String fecha){
-        try {
-            return Response.ok(cabeceraDAO.get(fecha)).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.status(404).entity("No se encontro Uso de Puntos en esta Fecha").build();
-        }
-    }
- */
-    @GET
-    @Path("/cliente/{idCliente}")
-    public Response getByCliente(@PathParam("idCliente") Long idCliente){
-        try {
-            return Response.ok(cabeceraDAO.get(idCliente)).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.status(404).entity("No se encontro Uso de Puntos en este Cliente").build();
-        }
-    }
 
 
     @GET
@@ -101,5 +67,46 @@ public class Uso_puntos_cabeceraRest {
             return Response.serverError().build();
         }
     }
+
+    @GET
+    @Path("/concepto/{idConcepto}")
+    public Response getByConcepto(@PathParam("idConcepto") int idConcepto) {
+        try {
+
+            List<Uso_puntos_cabecera> lista = cabeceraDAO.getUsoPuntosByConcepto(idConcepto);
+            return Response.ok( lista ).build();
+
+        } catch (Exception e) {
+            return Response.serverError().build();
+        }
+    }
+
+
+    @GET
+    @Path("/cliente/{idCliente}")
+    public Response getByCliente(@PathParam("idCliente") int idCliente){
+        try {
+
+            List<Uso_puntos_cabecera> lista = cabeceraDAO.getUsoPuntosByCliente(idCliente);
+            return Response.ok(lista).build();
+
+        } catch (Exception e) {
+            return Response.serverError().build();
+        }
+    }
+
+    @GET
+    @Path("/fecha/{stringFecha}")
+    public Response getByFecha(@PathParam("stringFecha") String stringFecha){
+        try {
+
+            List<Uso_puntos_cabecera> lista = cabeceraDAO.getUsoPuntosByFecha(stringFecha);
+            return Response.ok(lista).build();
+
+        } catch (Exception e) {
+            return Response.serverError().build();
+        }
+    }
+
 
 }

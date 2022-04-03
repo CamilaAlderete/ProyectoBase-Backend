@@ -6,6 +6,7 @@ import py.com.progweb.prueba.model.Cliente;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("cliente")
 @Consumes("application/json")
@@ -65,5 +66,63 @@ public class ClienteRest {
             return Response.serverError().build();
         }
     }
+
+
+    @GET
+    @Path("/nombre/{nombre}")
+    public Response getByNombre( @PathParam("nombre") String nombre){
+
+        try {
+
+            List<Cliente> lista =  this.clienteDAO.getClienteByNombre(nombre);
+            return Response.ok(lista).build();
+
+        }catch(Exception e){
+            return Response.serverError().build();
+        }
+    }
+
+    @GET
+    @Path("/apellido/{apellido}")
+    public Response getByApellido( @PathParam("apellido") String apellido){
+
+        try {
+
+            List<Cliente> lista =  this.clienteDAO.getClienteByApellido(apellido);
+            return Response.ok(lista).build();
+
+        }catch(Exception e){
+            return Response.serverError().build();
+        }
+    }
+
+    @GET
+    @Path("/cumple/{fecha}")
+    public Response getByCumple( @PathParam("fecha") String fecha){
+
+        try {
+
+            List<Cliente> lista =  this.clienteDAO.getClienteByCumple(fecha);
+            return Response.ok(lista).build();
+
+        }catch(Exception e){
+            return Response.serverError().build();
+        }
+    }
+
+    @GET
+    @Path("/puntos-a-vencer/{dias}")
+    public Response getByPuntajePorVencer( @PathParam("dias") int dias){
+
+        try {
+
+            List<Cliente> lista =  this.clienteDAO.getClientesPuntosPorVencer(dias);
+            return Response.ok(lista).build();
+
+        }catch(Exception e){
+            return Response.serverError().build();
+        }
+    }
+
 
 }

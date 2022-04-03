@@ -67,6 +67,16 @@ public class Bolsa {
     public Bolsa() {
     }
 
+    public Bolsa(Date fechaAsignacion, Date fechaCaducidad, Integer puntajeAsignado, Integer puntajeUtilizado, Integer saldoPuntos, Integer monto, Cliente cliente) {
+        this.fechaAsignacion = fechaAsignacion;
+        this.fechaCaducidad = fechaCaducidad;
+        this.puntajeAsignado = puntajeAsignado;
+        this.puntajeUtilizado = puntajeUtilizado;
+        this.saldoPuntos = saldoPuntos;
+        this.monto = monto;
+        this.cliente = cliente;
+    }
+
     public Integer getId() {
         return id;
     }

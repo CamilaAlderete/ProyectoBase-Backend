@@ -31,6 +31,13 @@ public class Asignacion_puntosRest {
     public Response crear(Asignacion_puntos asignacion_puntos){
 
         try {
+
+            //hay solapamiento
+            if (this.asignacion_puntosDAO.verificar_solapamiento(asignacion_puntos)){
+                return Response.status(404).entity("El intervalo se solapa con uno existente").build();
+            }
+
+            //no hay solapamiento
             this.asignacion_puntosDAO.persist(asignacion_puntos);
             return Response.ok().build();
 
@@ -44,6 +51,8 @@ public class Asignacion_puntosRest {
     public Response editar(Asignacion_puntos asignacion_puntos){
 
         try {
+
+            //ni idea como verificar
             this.asignacion_puntosDAO.merge(asignacion_puntos);
             return Response.ok().build();
 
@@ -63,6 +72,17 @@ public class Asignacion_puntosRest {
 
         }catch(Exception e){
             return Response.serverError().build();
+        }
+    }
+
+    @GET
+    @Path("/puntaje_equivalente/{monto}")
+    public Response puntaje_equivalente( @PathParam("monto") int monto){
+        try {
+            return Response.ok( asignacion_puntosDAO.puntaje_equivalente(monto) ).build();
+
+        }catch(Exception e){
+            return Response.status(404).entity(e.getMessage()).build();
         }
     }
 

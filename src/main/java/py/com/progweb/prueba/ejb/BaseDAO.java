@@ -10,8 +10,8 @@ import java.util.List;
 */
 public class BaseDAO<T> {
     @PersistenceContext(unitName = "pruebaPU")
-    private EntityManager em;
-    private Class<T> tipoClase;
+    protected EntityManager em;
+    protected Class<T> tipoClase;
 
     public BaseDAO(Class<T> tipoClase) {
         this.tipoClase = tipoClase;
