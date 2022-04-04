@@ -48,6 +48,13 @@ public class Uso_puntos_cabecera {
 
     }
 
+    public Uso_puntos_cabecera(Cliente cliente, Concepto_puntos conceptoPuntos, Integer puntajeUtilizado, Date fecha) {
+        this.cliente = cliente;
+        this.conceptoPuntos = conceptoPuntos;
+        this.puntajeUtilizado = puntajeUtilizado;
+        this.fecha = fecha;
+    }
+
     public Integer getIdCabecera() {
         return idCabecera;
     }
