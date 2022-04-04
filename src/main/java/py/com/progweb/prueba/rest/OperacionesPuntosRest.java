@@ -122,7 +122,9 @@ public class OperacionesPuntosRest {
 
             List<Bolsa> bolsas = bolsaDAO.getBolsasPorCliente(cliente);
 
-            utilizarPuntos(cliente, conceptoPuntos, bolsas);
+             Uso_puntos_cabecera uso_puntos_cabecera = utilizarPuntos(cliente, conceptoPuntos, bolsas);
+
+            Email.enviarConGMail( cliente.getEmail(), "Comprobante de uso de puntos", uso_puntos_cabecera.toString() );
 
             return Response.ok().build();
 
@@ -135,7 +137,9 @@ public class OperacionesPuntosRest {
 
 
 
-    public void utilizarPuntos(Cliente cliente, Concepto_puntos conceptoPuntos, List<Bolsa> bolsas) throws Exception{
+
+
+    public Uso_puntos_cabecera utilizarPuntos(Cliente cliente, Concepto_puntos conceptoPuntos, List<Bolsa> bolsas) throws Exception{
 
         try{
 
@@ -220,6 +224,8 @@ public class OperacionesPuntosRest {
                     }
 
                 }
+
+                return uso_puntos_cabecera;
 
 
             }else{
