@@ -40,6 +40,12 @@ public class Uso_puntos_detalle {
 
     }
 
+    public Uso_puntos_detalle(Uso_puntos_cabecera usoPuntosCabecera, Bolsa bolsaPuntos, Integer puntajeUtilizado) {
+        this.usoPuntosCabecera = usoPuntosCabecera;
+        this.bolsaPuntos = bolsaPuntos;
+        this.puntajeUtilizado = puntajeUtilizado;
+    }
+
     public Integer getIdDetalle() {
         return idDetalle;
     }

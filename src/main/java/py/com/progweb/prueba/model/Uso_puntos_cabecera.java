@@ -29,9 +29,9 @@ public class Uso_puntos_cabecera {
     @ManyToOne(optional=false)
     private Cliente cliente;
 
-   @ManyToOne(optional = false)
-   @JoinColumn(name = "id_concepto")
-   private Concepto_puntos conceptoPuntos;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_concepto")
+    private Concepto_puntos conceptoPuntos;
 
     @Column(name = "puntaje_utilizado")
     @Basic(optional = false)
@@ -46,6 +46,13 @@ public class Uso_puntos_cabecera {
 
     public Uso_puntos_cabecera(){
 
+    }
+
+    public Uso_puntos_cabecera(Cliente cliente, Concepto_puntos conceptoPuntos, Integer puntajeUtilizado, Date fecha) {
+        this.cliente = cliente;
+        this.conceptoPuntos = conceptoPuntos;
+        this.puntajeUtilizado = puntajeUtilizado;
+        this.fecha = fecha;
     }
 
     public Integer getIdCabecera() {

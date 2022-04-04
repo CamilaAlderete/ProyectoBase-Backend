@@ -52,6 +52,5 @@ public class Uso_puntos_cabeceraDAO extends BaseDAO<Uso_puntos_cabecera> {
     }
 
 
-
 }
 
