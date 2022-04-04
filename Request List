@@ -1,0 +1,925 @@
+{
+	"info": {
+		"_postman_id": "021c1c59-aeae-4635-ad15-a61552921372",
+		"name": "lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "trae listado clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Enzo\",\r\n    \"apellido\": \"Esquivel\",\r\n    \"ci\": 5121212,\r\n    \"tipoDocumento\": \"ci\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"enzo@gmail.com\",\r\n    \"telefono\": 444553,\r\n    \"fechaNacimiento\": \"1970-06-30\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar cliente 5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"idCliente\": 1,\r\n        \"nombre\": \"Camila\",\r\n        \"apellido\": \"Alderete\",\r\n        \"ci\": 4975479,\r\n        \"tipoDocumento\": \"ci\",\r\n        \"nacionalidad\": \"Paraguaya\",\r\n        \"email\": \"alderetecami996@gmail.com\",\r\n        \"telefono\": 444553,\r\n        \"fechaNacimiento\": \"1996-06-30\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get conceptos puntos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/concepto_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"concepto_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear concepto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\":\"vale de combustible\",\r\n    \"puntos_requeridos\":6\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/concepto_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"concepto_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar concepto puntos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"descripcion\": \"vale de compra\",\r\n    \"puntos_requeridos\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/concepto_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"concepto_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar concepto 5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/concepto_puntos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"concepto_puntos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear bolsa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaAsignacion\":\"2022-01-08\",\r\n    \"fechaCaducidad\":\"2022-04-04\",\r\n    \"puntajeAsignado\":7777777,\r\n    \"puntajeUtilizado\":777777,\r\n    \"saldoPuntos\":7777777,\r\n    \"monto\":7777777,\r\n    \"cliente\":{\r\n        \"idCliente\":1\r\n    }\r\n\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar bolsa ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \r\n        \"id\": 19,\r\n        \"fechaAsignacion\": \"2022-10-09\",\r\n        \"fechaCaducidad\": \"2022-04-05\",\r\n        \"puntajeAsignado\": 555,\r\n        \"puntajeUtilizado\": 555,\r\n        \"saldoPuntos\": 555,\r\n        \"monto\": 555,\r\n        \"cliente\": {\r\n            \"idCliente\": 1\r\n        }\r\n\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar bolsa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bolsas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cabecera",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear cabecera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": {\r\n        \"idCliente\":1\r\n    },\r\n    \"conceptoPuntos\": {\r\n        \"id\":1\r\n    },\r\n    \"puntajeUtilizado\":45,\r\n    \"fecha\":\"2022-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar cabecera",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCabecera\":1,\r\n    \"cliente\": {\r\n        \"idCliente\":1\r\n    },\r\n    \"conceptoPuntos\": {\r\n        \"id\":1\r\n    },\r\n    \"puntajeUtilizado\":55555,\r\n    \"fecha\":\"2022-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete cabecera",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get detalle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_detalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_detalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear detalle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usoPuntosCabecera\":{\r\n        \"idCabecera\":1\r\n    },\r\n    \"bolsaPuntos\":{\r\n        \"id\":1\r\n    },\r\n    \"puntajeUtilizado\": 29387\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_detalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_detalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar detalle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \"idDetalle\":1,\r\n    \"usoPuntosCabecera\":{\r\n        \"idCabecera\":1\r\n    },\r\n    \"bolsaPuntos\":{\r\n        \"id\":1\r\n    },\r\n    \"puntajeUtilizado\": 55555\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_detalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_detalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete detalle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_detalle/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_detalle",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asignacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear asignacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limite_inferior\":0,\r\n    \"limite_superior\":199999,\r\n    \"monto\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear asignacion 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limite_inferior\":500000,\r\n    \"limite_superior\":999999,\r\n    \"monto\": 20000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete asignacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar asignacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\":3\r\n    \"limite_inferior\":500000,\r\n    \"limite_superior\":45454545,\r\n    \"monto\": 20000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asignacion equivalente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/asignacion_puntos/puntaje_equivalente/150000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"asignacion_puntos",
+						"puntaje_equivalente",
+						"150000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asignacion apellido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente/apellido/ayala",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente",
+						"apellido",
+						"ayala"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asignacion nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente/nombre/moni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente",
+						"nombre",
+						"moni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get asignacion cumpleanhos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente/cumple/1996-06-29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente",
+						"cumple",
+						"1996-06-29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get puntos a vencer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/cliente/puntos-a-vencer/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"cliente",
+						"puntos-a-vencer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get uso puntos cabecera cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera/cliente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera",
+						"cliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uso puntos por fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera/fecha/2021-04-04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera",
+						"fecha",
+						"2021-04-04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cabecera por puntos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/uso_puntos_cabecera/concepto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"uso_puntos_cabecera",
+						"concepto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear carga de puntos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\":1,\r\n    \"monto\":150000,\r\n    \"diasDuracion\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/operaciones-con-puntos/carga-de-puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"operaciones-con-puntos",
+						"carga-de-puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear uso de puntos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\": 1,\r\n    \"idConceptoUso\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/operaciones-con-puntos/uso-de-puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"operaciones-con-puntos",
+						"uso-de-puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bolsa por rango",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa/rango/0/777777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa",
+						"rango",
+						"0",
+						"777777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bolsas por cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prueba/bolsa/cliente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"bolsa",
+						"cliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
