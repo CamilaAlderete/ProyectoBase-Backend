@@ -29,9 +29,9 @@ public class Uso_puntos_cabecera {
     @ManyToOne(optional=false)
     private Cliente cliente;
 
-   @ManyToOne(optional = false)
-   @JoinColumn(name = "id_concepto")
-   private Concepto_puntos conceptoPuntos;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_concepto")
+    private Concepto_puntos conceptoPuntos;
 
     @Column(name = "puntaje_utilizado")
     @Basic(optional = false)

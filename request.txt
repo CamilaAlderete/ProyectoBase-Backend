@@ -1,0 +1,158 @@
+
+------cliente-------------
+
+trae listado
+get
+http://localhost:8080/prueba/cliente
+
+
+crear cliente
+post
+http://localhost:8080/prueba/cliente
+
+{
+    "nombre": "Enzo",
+    "apellido": "Esquivel",
+    "ci": 5121212,
+    "tipoDocumento": "ci",
+    "nacionalidad": "Paraguaya",
+    "email": "enzo@gmail.com",
+    "telefono": 444553,
+    "fechaNacimiento": "1970-06-30"
+}
+
+
+borrar
+delete (5 es el id de la persona)
+http://localhost:8080/prueba/cliente/5
+
+
+actualizar
+put
+http://localhost:8080/prueba/cliente
+
+
+ {
+        "idCliente": 1,
+        "nombre": "Camila",
+        "apellido": "Alderete",
+        "ci": 4975479,
+        "tipoDocumento": "ci",
+        "nacionalidad": "Paraguaya",
+        "email": "alderetecami996@gmail.com",
+        "telefono": 444553,
+        "fechaNacimiento": "1996-06-30"
+ }
+
+
+------- concepto puntos -------
+get
+http://localhost:8080/prueba/concepto_puntos
+
+
+post
+http://localhost:8080/prueba/concepto_puntos
+
+{
+    "descripcion":"vale de combustible",
+    "puntos_requeridos":6
+}
+
+
+
+put
+http://localhost:8080/prueba/concepto_puntos
+
+{
+    "id":1,
+    "descripcion": "vale de compra",
+    "puntos_requeridos":6
+}
+
+delete
+http://localhost:8080/prueba/concepto_puntos/5
+
+
+------ bolsa ------ (en carga de puntos esto se hace automaticamente...)
+get
+http://localhost:8080/prueba/bolsa
+
+
+post
+http://localhost:8080/prueba/bolsa
+
+{
+    "fechaAsignacion":"2022-10-10",
+    "fechaCaducidad":"2022-04-04",
+    "puntajeAsignado":1212121212,
+    "puntajeUtilizado":1212121,
+    "saldoPuntos":121212121,
+    "monto":12121212,
+    "cliente":{
+        "idCliente":1
+    }
+
+    
+}
+
+put
+http://localhost:8080/prueba/bolsa
+
+{
+	"id": 1,
+    "fechaAsignacion":"2022-10-10",
+    "fechaCaducidad":"2022-04-04",
+    "puntajeAsignado":1,
+    "puntajeUtilizado":1,
+    "saldoPuntos":0,
+    "monto":12121212,
+    "cliente":{
+        "idCliente":1
+    }
+
+    
+}
+
+
+delete
+http://localhost:8080/prueba/bolsa/1
+
+
+
+---- uso puntos cabecera -------------
+
+get
+http://localhost:8080/prueba/uso_puntos_cabecera
+
+
+
+post
+http://localhost:8080/prueba/uso_puntos_cabecera
+
+{
+    "cliente": {
+        "idCliente":1
+    },
+    "conceptoPuntos": {
+        "id":2
+    },
+    "puntajeUtilizado":6,
+    "fecha":"2022-01-01"
+}
+
+
+put
+http://localhost:8080/prueba/uso_puntos_cabecera
+
+
+delete
+http://localhost:8080/prueba/uso_puntos_cabecera/1
+
+
+
+
+
+
+
+
+ 

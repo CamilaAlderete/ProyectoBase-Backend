@@ -1,0 +1,3 @@
+Los .jar deben de agregarse al proyecto para el funcionamiento del mail.
+El ide de intellij tiene la funcionalidad para apuntar a estos, sea cual
+sea su ubicacion
